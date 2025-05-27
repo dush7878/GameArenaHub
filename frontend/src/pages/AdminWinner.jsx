@@ -34,12 +34,12 @@ export default function AdminWinners() {
   }, []);
 
   const fetchWinners = async () => {
-    const res = await axios.get('http://localhost:5000/api/winner/all');
+    const res = await axios.get('https://gamearenahub.onrender.com/api/winner/all');
     setWinners(res.data);
   };
 
   const fetchContests = async () => {
-    const res = await axios.get('http://localhost:5000/api/contests');
+    const res = await axios.get('https://gamearenahub.onrender.com/api/contests');
     setContests(res.data);
   };
 
@@ -54,7 +54,7 @@ export default function AdminWinners() {
 
   const toggleStatus = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/winner/status/${id}`);
+      await axios.put(`https://gamearenahub.onrender.com/api/winner/status/${id}`);
       fetchWinners();
     } catch {
       alert('Failed to update status');
@@ -64,7 +64,7 @@ export default function AdminWinners() {
   const deleteWinner = async (id) => {
     if (window.confirm('Are you sure you want to delete this winner?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/winner/delete/${id}`);
+        await axios.delete(`https://gamearenahub.onrender.com/api/winner/delete/${id}`);
         fetchWinners();
       } catch {
         alert('Failed to delete winner');
@@ -80,7 +80,7 @@ export default function AdminWinners() {
     });
 
     try {
-      await axios.post('http://localhost:5000/api/winner/create', data);
+      await axios.post('https://gamearenahub.onrender.com/api/winner/create', data);
       alert('Winner added');
       setFormData({ name: '', game: '', gameUid: '', contest: '', prize: '', profile: null });
       fetchWinners();

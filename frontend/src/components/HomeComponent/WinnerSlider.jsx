@@ -8,7 +8,7 @@ const WinnerSlider = () => {
   useEffect(() => {
     const fetchWinners = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/winner/active');
+        const res = await axios.get('https://gamearenahub.onrender.com/api/winner/active');
         setWinners(res.data);
       } catch (err) {
         console.error('Failed to fetch winners:', err);

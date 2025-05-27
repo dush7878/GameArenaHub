@@ -8,7 +8,7 @@ export default function BannerSlider() {
   useEffect(() => {
     async function fetchBanners() {
       try {
-        const res = await axios.get('http://localhost:5000/api/banners');
+        const res = await axios.get('https://gamearenahub.onrender.com/api/banners');
         // Filter active banners only
         setBanners(res.data.filter(b => b.isActive));
         setCurrentIndex(0); // reset slider on new data

@@ -23,7 +23,7 @@ export default function AdminContestRegistrations() {
 
   const fetchRegistrations = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/contest/all');
+      const res = await axios.get('https://gamearenahub.onrender.com/api/contest/all');
       setRegistrations(res.data);
     } catch {
       alert('Failed to load registrations');
@@ -33,7 +33,7 @@ export default function AdminContestRegistrations() {
   const updateStatus = async (id, newStatus) => {
     try {
       const res = await axios.patch(
-        `http://localhost:5000/api/contest/update-status/${id}`,
+        `https://gamearenahub.onrender.com/api/contest/update-status/${id}`,
         { status: newStatus }
       );
       setRegistrations(prev =>

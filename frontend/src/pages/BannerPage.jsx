@@ -9,7 +9,7 @@ export default function BannerPage() {
 
   const fetchBanners = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/banners');
+      const res = await axios.get('https://gamearenahub.onrender.com/api/banners');
       setBanners(res.data);
     } catch {
       toast.error('Failed to load banners');
@@ -24,7 +24,7 @@ export default function BannerPage() {
     formData.append('image', imageFile);
 
     try {
-      await axios.post('http://localhost:5000/api/banners/upload', formData, {
+      await axios.post('https://gamearenahub.onrender.com/api/banners/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -39,7 +39,7 @@ export default function BannerPage() {
 
   const toggleActive = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/banners/${id}/toggle`);
+      await axios.patch(`https://gamearenahub.onrender.com/api/banners/${id}/toggle`);
       toast.success('Status updated');
       fetchBanners();
     } catch (err) {
@@ -49,7 +49,7 @@ export default function BannerPage() {
 
   const deleteBanner = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/banners/${id}`);
+      await axios.delete(`https://gamearenahub.onrender.com/api/banners/${id}`);
       toast.success('Banner deleted');
       fetchBanners();
     } catch {

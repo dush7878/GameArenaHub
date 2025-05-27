@@ -6,7 +6,7 @@ const GameLogos = () => {
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/games');
+        const res = await fetch('https://gamearenahub.onrender.com/api/games');
         const data = await res.json();
         setGames(data);
       } catch (err) {

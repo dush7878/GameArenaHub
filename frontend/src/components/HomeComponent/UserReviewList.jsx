@@ -9,7 +9,7 @@ const UserReviewList = () => {
 
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/reviews");
+      const res = await axios.get("https://gamearenahub.onrender.com/api/reviews");
       const active = res.data.filter((r) => r.status === "active");
       setReviews(active);
     } catch (err) {

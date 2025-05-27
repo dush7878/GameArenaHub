@@ -6,7 +6,7 @@ const LiveContest = () => {
 
   const fetchLiveContests = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/contests');
+      const res = await fetch('https://gamearenahub.onrender.com/api/contests');
       const data = await res.json();
       const live = data.filter(contest => contest.status === 'live');
       setLiveContests(live);

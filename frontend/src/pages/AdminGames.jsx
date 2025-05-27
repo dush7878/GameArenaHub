@@ -10,7 +10,7 @@ const AdminGames = () => {
 
   const fetchGames = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/games');
+      const res = await axios.get('https://gamearenahub.onrender.com/api/games');
       setGames(res.data);
     } catch {
       toast.error('Failed to fetch games');
@@ -25,7 +25,7 @@ const AdminGames = () => {
     formData.append('logo', logo);
 
     try {
-      await axios.post('http://localhost:5000/api/games', formData);
+      await axios.post('https://gamearenahub.onrender.com/api/games', formData);
       toast.success('Game added');
       setName('');
       setLogo(null);
@@ -37,7 +37,7 @@ const AdminGames = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/games/${id}`);
+      await axios.delete(`https://gamearenahub.onrender.com/api/games/${id}`);
       toast.success('Game deleted');
       fetchGames();
     } catch {

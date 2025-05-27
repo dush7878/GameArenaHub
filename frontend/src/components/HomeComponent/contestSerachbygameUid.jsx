@@ -20,7 +20,7 @@ const ContestSearchByGameUID = () => {
     }
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/contest/search?uid=${gameUID}`);
+      const res = await axios.get(`https://gamearenahub.onrender.com/api/contest/search?uid=${gameUID}`);
       const data = res.data;
       if (!data || data.status !== "approved") {
         setMessage("No approved contest registration found for this Game UID.");

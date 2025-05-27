@@ -31,7 +31,7 @@ export default function ContestRegistration() {
   useEffect(() => {
     const fetchContests = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/contest/upcoming');
+        const res = await fetch('https://gamearenahub.onrender.com/api/contest/upcoming');
         const data = await res.json();
         setUpcomingContests(data);
       } catch (error) {
@@ -56,7 +56,7 @@ export default function ContestRegistration() {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:5000/api/contest/register', {
+      const response = await fetch('https://gamearenahub.onrender.com/api/contest/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

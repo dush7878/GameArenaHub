@@ -8,7 +8,7 @@ const ReviewManager = () => {
   const [reviews, setReviews] = useState([]);
 
   const fetchReviews = async () => {
-    const res = await axios.get('http://localhost:5000/api/reviews');
+    const res = await axios.get('https://gamearenahub.onrender.com/api/reviews');
     setReviews(res.data);
   };
 
@@ -16,7 +16,7 @@ const ReviewManager = () => {
     const { name, game, review, rating } = form;
     if (!name || !game || !review || !rating) return toast.warn('All fields are required');
     try {
-      await axios.post('http://localhost:5000/api/reviews', form);
+      await axios.post('https://gamearenahub.onrender.com/api/reviews', form);
       toast.success('Review added');
       setForm({ name: '', game: '', review: '', rating: '', status: 'active' });
       fetchReviews();
@@ -26,13 +26,13 @@ const ReviewManager = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/reviews/${id}`);
+    await axios.delete(`https://gamearenahub.onrender.com/api/reviews/${id}`);
     toast.success('Review deleted');
     fetchReviews();
   };
 
   const toggleStatus = async (id) => {
-    await axios.patch(`http://localhost:5000/api/reviews/${id}/toggle`);
+    await axios.patch(`https://gamearenahub.onrender.com/api/reviews/${id}/toggle`);
     fetchReviews();
   };
 

@@ -28,7 +28,7 @@ export default function ContestPage() {
 
   const fetchContests = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/contests');
+      const res = await axios.get('https://gamearenahub.onrender.com/api/contests');
       setContests(res.data);
     } catch {
       toast.error('Failed to fetch contests');
@@ -54,7 +54,7 @@ export default function ContestPage() {
       formData.append('status', status);
       formData.append('entryFees', entryFees);
 
-      await axios.post('http://localhost:5000/api/contests/create', formData, {
+      await axios.post('https://gamearenahub.onrender.com/api/contests/create', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -73,7 +73,7 @@ export default function ContestPage() {
 
   const updateContestStatus = async (id, newStatus) => {
     try {
-      await axios.patch(`http://localhost:5000/api/contests/${id}/status`, { status: newStatus });
+      await axios.patch(`https://gamearenahub.onrender.com/api/contests/${id}/status`, { status: newStatus });
       toast.success('Status updated');
       fetchContests();
     } catch {
@@ -83,7 +83,7 @@ export default function ContestPage() {
 
   const deleteContest = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/contests/${id}`);
+      await axios.delete(`https://gamearenahub.onrender.com/api/contests/${id}`);
       toast.success('Deleted');
       fetchContests();
     } catch {
