@@ -38,7 +38,7 @@ export default function TopNavbar() {
               {/* Brand Name */}
               <div>
                 <h1 className="text-2xl font-black bg-gradient-to-r from-blue-200 via-white to-purple-200 bg-clip-text text-transparent tracking-wider font-mono">
-                  BATTLERENA
+                  GameArena HUB
                 </h1>
                 <div className="flex items-center gap-1 mt-0.5">
                   <div className="w-1 h-1 bg-blue-400 rounded-full animate-pulse"></div>
