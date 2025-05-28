@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
-  Mail, Instagram, Youtube, Shield, Gamepad2, Trophy, Zap
+  Mail, Instagram, Youtube, Shield, Gamepad2, Trophy, Zap, User2
 } from 'lucide-react';
 
 const TermsPage = () => {
@@ -91,7 +91,7 @@ const TermsPage = () => {
               <p className="text-gray-400 text-sm text-center">BattleRena Tournaments</p>
             </a>
 
-            <NavLink to="/admin/dashboard"> Admin Panel </NavLink>
+            <NavLink className="backdrop-blur-sm bg-white/5 rounded-xl p-3 border border-red-500/30 hover:border-red-400/60 transition-all hover:scale-105 group" to="/admin/dashboard"> <p className='flex justify-center text-gray-400 gap-4'><User2/> Admin Panel</p> </NavLink>
           </div>
         </div>
       </div>
