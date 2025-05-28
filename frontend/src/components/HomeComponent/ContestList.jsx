@@ -134,12 +134,12 @@ const ContestList = () => {
                   </div>
                   
                   {/* Join Contest Button */}
-                  <div className="pt-2">
+                  {/* <div className="pt-2">
                     <button className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 flex items-center justify-center gap-2">
                       <Sword className="w-4 h-4" />
                       Join Battle
                     </button>
-                  </div>
+                  </div> */}
                 </div>
                 
                 {/* Premium glow effect */}

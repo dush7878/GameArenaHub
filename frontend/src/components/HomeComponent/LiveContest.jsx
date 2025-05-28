@@ -39,7 +39,7 @@ const LiveContest = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-white">
             
           </h2>
-          <p className="text-gray-300 text-sm mt-2">Join premium gaming battles now</p>
+          <p className="text-gray-300 font-bold text-sm mt-2">Watch Live on YouTube Channel</p>
         </div>
 
         {liveContests.length === 0 ? (
