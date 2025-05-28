@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import {
   Mail, Instagram, Youtube, Shield, Gamepad2, Trophy, Zap
 } from 'lucide-react';
@@ -89,6 +90,8 @@ const TermsPage = () => {
               <p className="text-white text-center font-medium">YouTube</p>
               <p className="text-gray-400 text-sm text-center">BattleRena Tournaments</p>
             </a>
+
+            <NavLink to="/admin/dashboard"> Admin Panel </NavLink>
           </div>
         </div>
       </div>
