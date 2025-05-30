@@ -24,7 +24,7 @@ export default function TopNavbar() {
               <div className="relative">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-400/30 to-purple-500/30 border border-white/30 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <img 
-                    src="/battlerena.logo.png" 
+                    src="/games_logo.png" 
                     alt="Logo" 
                     className="h-6 w-6 object-contain filter brightness-110" 
                   />
