@@ -70,25 +70,19 @@ const TermsPage = () => {
         <div className="backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 p-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">Contact Us</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <a href="mailto:battlerenaofficial@gmail.com" 
-               className="backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-blue-500/30 hover:border-blue-400/60 transition-all hover:scale-105 group">
-              <Mail className="w-8 h-8 text-blue-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
-              <p className="text-white text-center font-medium">Email</p>
-              <p className="text-gray-400 text-sm text-center">battlerenaofficial@gmail.com</p>
-            </a>
             
-            <a href="https://instagram.com/battlerena.in" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/gamesarenahub/" target="_blank" rel="noopener noreferrer"
                className="backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-pink-500/30 hover:border-pink-400/60 transition-all hover:scale-105 group">
               <Instagram className="w-8 h-8 text-pink-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
               <p className="text-white text-center font-medium">Instagram</p>
-              <p className="text-gray-400 text-sm text-center">@battlerena.in</p>
+              <p className="text-gray-400 text-sm text-center">@gamesarenahub</p>
             </a>
             
-            <a href="https://youtube.com/@battlerena" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.youtube.com/@gamearenahub" target="_blank" rel="noopener noreferrer"
                className="backdrop-blur-sm bg-white/5 rounded-xl p-6 border border-red-500/30 hover:border-red-400/60 transition-all hover:scale-105 group">
               <Youtube className="w-8 h-8 text-red-400 mx-auto mb-3 group-hover:scale-110 transition-transform" />
               <p className="text-white text-center font-medium">YouTube</p>
-              <p className="text-gray-400 text-sm text-center">BattleRena Tournaments</p>
+              <p className="text-gray-400 text-sm text-center">GameArena Hub</p>
             </a>
 
             <NavLink className="backdrop-blur-sm bg-white/5 rounded-xl p-3 border border-red-500/30 hover:border-red-400/60 transition-all hover:scale-105 group" to="/admin/dashboard"> <p className='flex justify-center text-gray-400 gap-4'><User2/> Admin Panel</p> </NavLink>

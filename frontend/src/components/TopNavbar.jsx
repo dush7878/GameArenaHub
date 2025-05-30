@@ -26,7 +26,7 @@ export default function TopNavbar() {
                   <img 
                     src="/games_logo.png" 
                     alt="Logo" 
-                    className="h-6 w-6 object-contain filter brightness-110" 
+                    className="h-8 w-8 mb-1 object-contain filter brightness-110" 
                   />
                   {/* Glow effect */}
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-blue-400/20 to-purple-500/20 blur-sm group-hover:blur-md transition-all duration-300"></div>
