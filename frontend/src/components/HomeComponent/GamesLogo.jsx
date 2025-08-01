@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-
+import CONFIG from '../../config';
 const GameLogos = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const res = await fetch('https://gamearenahub.onrender.com/api/games');
+        const res = await fetch(`${CONFIG.API_BASE_URL}/api/games`);
         const data = await res.json();
         setGames(data);
       } catch (err) {

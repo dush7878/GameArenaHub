@@ -14,6 +14,7 @@ export default function App() {
       
       {/* User routes */}
       <Route path="/*" element={<UserRoutes />} />
+      
     </Routes>
   );
 }

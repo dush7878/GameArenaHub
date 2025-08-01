@@ -7,6 +7,7 @@ import AdminContestRegistrations from './AdminContestRegistrationPage';
 import AdminWinners from './AdminWinner';
 import AdminGames from './AdminGames';
 import ReviewManager from './ReviewManager';
+import AdminUsers from './AdminAllUser';
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ export default function AdminDashboard() {
       case 'contest':
         return <ContestPage />;
       case 'register-user':
-        return <AdminContestRegistrations />;
+        return <AdminUsers />;
       case 'add-winner':
         return <AdminWinners />;
       case 'add-games':

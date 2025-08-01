@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CONFIG from '../config';
 
 export default function AdminLogin() {
   const [password, setPassword] = useState('');
@@ -11,7 +12,7 @@ export default function AdminLogin() {
     setError('');
 
     try {
-      const response = await fetch('https://gamearenahub.onrender.com/api/admin/login', {
+      const response = await fetch(`${CONFIG.API_BASE_URL}/api/admin/login` , {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password }),

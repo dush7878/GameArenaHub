@@ -12,12 +12,12 @@ const TermsPage = () => {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-3 mb-4">
             <Gamepad2 className="w-8 h-8 text-cyan-400" />
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
               Terms & Conditions
             </h1>
             <Trophy className="w-8 h-8 text-yellow-400" />
           </div>
-          <p className="text-gray-400">Effective Date: [Launch Date]</p>
+          {/* <p className="text-gray-400"> GamerArenaHub (Play and Earn Money)</p> */}
         </div>
 
         {/* Main Content */}
@@ -67,7 +67,7 @@ const TermsPage = () => {
         </div>
 
         {/* Contact */}
-        <div className="backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 p-8">
+        <div className="backdrop-blur-xl bg-white/10 rounded-2xl border border-white/20 p-8 mb-10">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">Contact Us</h2>
           <div className="grid md:grid-cols-3 gap-6">
             
@@ -85,7 +85,7 @@ const TermsPage = () => {
               <p className="text-gray-400 text-sm text-center">GameArena Hub</p>
             </a>
 
-            <NavLink className="backdrop-blur-sm bg-white/5 rounded-xl p-3 border border-red-500/30 hover:border-red-400/60 transition-all hover:scale-105 group" to="/admin/dashboard"> <p className='flex justify-center text-gray-400 gap-4'><User2/> Admin Panel</p> </NavLink>
+            {/* <NavLink className="backdrop-blur-sm bg-white/5 rounded-xl p-3 border border-red-500/30 hover:border-red-400/60 transition-all hover:scale-105 group" to="/admin/dashboard"> <p className='flex justify-center text-gray-400 gap-4'><User2/> Admin Panel</p> </NavLink> */}
           </div>
         </div>
       </div>

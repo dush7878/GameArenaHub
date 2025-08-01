@@ -12,6 +12,7 @@ import {
   ToggleRight,
   ToggleLeft,
 } from 'lucide-react';
+import CONFIG from '../config';
 
 const games = ['Free Fire', 'PUBG', 'COD'];
 
@@ -34,12 +35,12 @@ export default function AdminWinners() {
   }, []);
 
   const fetchWinners = async () => {
-    const res = await axios.get('https://gamearenahub.onrender.com/api/winner/all');
+    const res = await axios.get(`${CONFIG.API_BASE_URL}/api/winner/all`);
     setWinners(res.data);
   };
 
   const fetchContests = async () => {
-    const res = await axios.get('https://gamearenahub.onrender.com/api/contests');
+    const res = await axios.get(`${CONFIG.API_BASE_URL}/api/contests`);
     setContests(res.data);
   };
 
@@ -54,7 +55,7 @@ export default function AdminWinners() {
 
   const toggleStatus = async (id) => {
     try {
-      await axios.put(`https://gamearenahub.onrender.com/api/winner/status/${id}`);
+      await axios.put(`${CONFIG.API_BASE_URL}/api/winner/status/${id}`);
       fetchWinners();
     } catch {
       alert('Failed to update status');
@@ -64,7 +65,7 @@ export default function AdminWinners() {
   const deleteWinner = async (id) => {
     if (window.confirm('Are you sure you want to delete this winner?')) {
       try {
-        await axios.delete(`https://gamearenahub.onrender.com/api/winner/delete/${id}`);
+        await axios.delete(`${CONFIG.API_BASE_URL}/api/winner/delete/${id}`);
         fetchWinners();
       } catch {
         alert('Failed to delete winner');
@@ -80,7 +81,7 @@ export default function AdminWinners() {
     });
 
     try {
-      await axios.post('https://gamearenahub.onrender.com/api/winner/create', data);
+      await axios.post(`${CONFIG.API_BASE_URL}/api/winner/create`, data);
       alert('Winner added');
       setFormData({ name: '', game: '', gameUid: '', contest: '', prize: '', profile: null });
       fetchWinners();

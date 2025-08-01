@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Search, Trophy, User, Gamepad2, CheckCircle, XCircle, AlertCircle } from "lucide-react";
-
+import CONFIG from "../../config";
 const ContestSearchByGameUID = () => {
   const [gameUID, setGameUID] = useState("");
   const [result, setResult] = useState(null);
@@ -20,7 +20,7 @@ const ContestSearchByGameUID = () => {
     }
 
     try {
-      const res = await axios.get(`https://gamearenahub.onrender.com/api/contest/search?uid=${gameUID}`);
+      const res = await axios.get(`${CONFIG.API_BASE_URL}/api/contest/search?uid=${gameUID}`);
       const data = res.data;
       if (!data || data.status !== "approved") {
         setMessage("No approved contest registration found for this Game UID.");
@@ -41,7 +41,7 @@ const ContestSearchByGameUID = () => {
   };
 
   return (
-    <div className=" bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-4 flex items-center justify-center">
+    <div className=" bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 p-4 flex items-center justify-center rounded-2xl">
       {/* Background Effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>

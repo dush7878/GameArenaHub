@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaTrophy, FaCrown, FaMedal, FaGamepad } from 'react-icons/fa';
-
+import CONFIG from '../../config';
 const WinnerSlider = () => {
   const [winners, setWinners] = useState([]);
 
   useEffect(() => {
     const fetchWinners = async () => {
       try {
-        const res = await axios.get('https://gamearenahub.onrender.com/api/winner/active');
+        const res = await axios.get(`${CONFIG.API_BASE_URL}/api/winner/active`);
         setWinners(res.data);
       } catch (err) {
         console.error('Failed to fetch winners:', err);

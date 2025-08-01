@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Star, StarHalf, Filter, ArrowUpDown, Gamepad2, Trophy, Zap } from "lucide-react";
-
+import CONFIG from "../../config";
 const UserReviewList = () => {
   const [reviews, setReviews] = useState([]);
   const [filteredGame, setFilteredGame] = useState("all");
@@ -9,7 +9,7 @@ const UserReviewList = () => {
 
   const fetchReviews = async () => {
     try {
-      const res = await axios.get("https://gamearenahub.onrender.com/api/reviews");
+      const res = await axios.get(`${CONFIG.API_BASE_URL}/api/reviews`);
       const active = res.data.filter((r) => r.status === "active");
       setReviews(active);
     } catch (err) {

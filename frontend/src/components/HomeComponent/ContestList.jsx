@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Gamepad2, Trophy, Coins, Calendar, Users, Clock, Star, Crown, Sword } from 'lucide-react';
-
+import CONFIG from '../../config';
 const ContestList = () => {
   const [contests, setContests] = useState([]);
 
   const fetchContests = async () => {
     try {
-      const response = await fetch('https://gamearenahub.onrender.com/api/contests');
+      const response = await fetch(`${CONFIG.API_BASE_URL}/api/contests`);
       const data = await response.json();
       setContests(data);
     } catch (err) {
