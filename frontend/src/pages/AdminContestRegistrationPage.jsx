@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import CONFIG from '../config';
 import {
   CheckCircle2,
   XCircle,
@@ -23,7 +24,7 @@ export default function AdminContestRegistrations() {
 
   const fetchRegistrations = async () => {
     try {
-      const res = await axios.get('https://gamearenahub.onrender.com/api/contest/all');
+      const res = await axios.get(`${CONFIG.API_BASE_URL}/api/contest/all`);
       setRegistrations(res.data);
     } catch {
       alert('Failed to load registrations');
@@ -33,7 +34,7 @@ export default function AdminContestRegistrations() {
   const updateStatus = async (id, newStatus) => {
     try {
       const res = await axios.patch(
-        `https://gamearenahub.onrender.com/api/contest/update-status/${id}`,
+        `${CONFIG.API_BASE_URL}/api/contest/update-status/${id}`,
         { status: newStatus }
       );
       setRegistrations(prev =>

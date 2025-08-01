@@ -12,6 +12,7 @@ import {
   StopCircle,
   Filter,
 } from 'lucide-react';
+import CONFIG from '../config';
 
 const GAME_OPTIONS = ['Free Fire', 'PUBG', 'COD'];
 const STATUS_OPTIONS = ['upcoming', 'live', 'ended'];
@@ -28,7 +29,7 @@ export default function ContestPage() {
 
   const fetchContests = async () => {
     try {
-      const res = await axios.get('https://gamearenahub.onrender.com/api/contests');
+      const res = await axios.get(`${CONFIG.API_BASE_URL}/api/contests`);
       setContests(res.data);
     } catch {
       toast.error('Failed to fetch contests');
@@ -54,7 +55,7 @@ export default function ContestPage() {
       formData.append('status', status);
       formData.append('entryFees', entryFees);
 
-      await axios.post('https://gamearenahub.onrender.com/api/contests/create', formData, {
+      await axios.post(`${CONFIG.API_BASE_URL}/api/contests/create`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
@@ -73,7 +74,7 @@ export default function ContestPage() {
 
   const updateContestStatus = async (id, newStatus) => {
     try {
-      await axios.patch(`https://gamearenahub.onrender.com/api/contests/${id}/status`, { status: newStatus });
+      await axios.patch(`${CONFIG.API_BASE_URL}/api/contests/${id}/status`, { status: newStatus });
       toast.success('Status updated');
       fetchContests();
     } catch {
@@ -83,7 +84,7 @@ export default function ContestPage() {
 
   const deleteContest = async (id) => {
     try {
-      await axios.delete(`https://gamearenahub.onrender.com/api/contests/${id}`);
+      await axios.delete(`${CONFIG.API_BASE_URL}/api/contests/${id}`);
       toast.success('Deleted');
       fetchContests();
     } catch {

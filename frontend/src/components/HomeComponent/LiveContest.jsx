@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Gamepad2, Trophy, Coins, Zap, Users, Clock, Play, Target, Crown } from 'lucide-react';
+import CONFIG from '../../config';
 
 const LiveContest = () => {
   const [liveContests, setLiveContests] = useState([]);
 
   const fetchLiveContests = async () => {
     try {
-      const res = await fetch('https://gamearenahub.onrender.com/api/contests');
+      const res = await fetch(`${CONFIG.API_BASE_URL}/api/contests`);
       const data = await res.json();
       const live = data.filter(contest => contest.status === 'live');
       setLiveContests(live);

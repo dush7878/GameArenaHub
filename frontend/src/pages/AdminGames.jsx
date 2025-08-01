@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Gamepad2, Upload, Trash2 } from 'lucide-react';
+import CONFIG from '../config';
 
 const AdminGames = () => {
   const [name, setName] = useState('');
@@ -10,7 +11,7 @@ const AdminGames = () => {
 
   const fetchGames = async () => {
     try {
-      const res = await axios.get('https://gamearenahub.onrender.com/api/games');
+      const res = await axios.get(`${CONFIG.API_BASE_URL}/api/games`);
       setGames(res.data);
     } catch {
       toast.error('Failed to fetch games');
@@ -25,7 +26,7 @@ const AdminGames = () => {
     formData.append('logo', logo);
 
     try {
-      await axios.post('https://gamearenahub.onrender.com/api/games', formData);
+      await axios.post(`${CONFIG.API_BASE_URL}/api/games`, formData);
       toast.success('Game added');
       setName('');
       setLogo(null);
@@ -37,7 +38,7 @@ const AdminGames = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://gamearenahub.onrender.com/api/games/${id}`);
+      await axios.delete(`${CONFIG.API_BASE_URL}/api/games/${id}`);
       toast.success('Game deleted');
       fetchGames();
     } catch {

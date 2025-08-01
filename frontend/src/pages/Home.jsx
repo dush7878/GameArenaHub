@@ -2,6 +2,7 @@ import BannerSlider from "../components/HomeComponent/BannerSlider";
 import WinnerSlider from "../components/HomeComponent/WinnerSlider";
 import PlaySection from "../components/HomeComponent/PlaySection";
 import GameLogos from "../components/HomeComponent/GamesLogo";
+import ContestSearchByGameUID from "../components/HomeComponent/contestSerachbygameUid";
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
 
         {/* Winners and Games Section */}
         <div className="mt-4 space-y-8">
-          
+
           <WinnerSlider />
 
           {/* Game Logos with glassmorphism container */}
@@ -37,6 +38,14 @@ export default function Home() {
             🎮 Featured Games
           </h2>
           <GameLogos />
+        </div>
+
+        {/* COntest Check  */}
+        <div className="mt-4 space-y-8 p-4 rounded-2xl">
+
+
+          <ContestSearchByGameUID />
+
         </div>
 
         {/* Play Section with premium glassmorphism */}

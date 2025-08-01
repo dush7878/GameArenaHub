@@ -5,7 +5,7 @@ import TermsPage from '../components/HomeComponent/TermsPage'
 function HelpandSupport() {
   return (
     <div className=''>
-        <ContestSearchByGameUID />
+        {/* <ContestSearchByGameUID /> */}
         <TermsPage />
     </div>
   )

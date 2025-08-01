@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Star, Trash2, EyeOff, Eye, MessageCircle } from 'lucide-react';
+import CONFIG from '../config';
 
 const ReviewManager = () => {
   const [form, setForm] = useState({ name: '', game: '', review: '', rating: '', status: 'active' });
   const [reviews, setReviews] = useState([]);
 
   const fetchReviews = async () => {
-    const res = await axios.get('https://gamearenahub.onrender.com/api/reviews');
+    const res = await axios.get(`${CONFIG.API_BASE_URL}/api/reviews`);
     setReviews(res.data);
   };
 
@@ -16,7 +17,7 @@ const ReviewManager = () => {
     const { name, game, review, rating } = form;
     if (!name || !game || !review || !rating) return toast.warn('All fields are required');
     try {
-      await axios.post('https://gamearenahub.onrender.com/api/reviews', form);
+      await axios.post(`${CONFIG.API_BASE_URL}/api/reviews`, form);
       toast.success('Review added');
       setForm({ name: '', game: '', review: '', rating: '', status: 'active' });
       fetchReviews();
@@ -26,13 +27,13 @@ const ReviewManager = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`https://gamearenahub.onrender.com/api/reviews/${id}`);
+    await axios.delete(`${CONFIG.API_BASE_URL}/api/reviews/${id}`);
     toast.success('Review deleted');
     fetchReviews();
   };
 
   const toggleStatus = async (id) => {
-    await axios.patch(`https://gamearenahub.onrender.com/api/reviews/${id}/toggle`);
+    await axios.patch(`${CONFIG.API_BASE_URL}/api/reviews/${id}/toggle`);
     fetchReviews();
   };
 
